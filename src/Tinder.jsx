@@ -27,8 +27,19 @@ class Tinder extends React.Component {
     })
 
     const person = array.shift()
-    console.log(person.name + 'をいいねしました')
-    console.log(array)
+    console.log(person.name + 'さんをいいねしました')
+    console.log('残り' + array.length + '人です')
+    return person
+  }
+
+  skip = (array) => {
+    this.setState({
+      people: this.state.people
+    })
+
+    const person = array.shift()
+    console.log(person.name + 'さんをスキップしました')
+    console.log('残り' + array.length + '人です')
     return person
   }
 
@@ -38,7 +49,7 @@ class Tinder extends React.Component {
 
     return (
       <div>
-        <Card name={person.name} age="23" isPublished={this.state.isPublished} toggle={() => this.togglePublished()} like={() => this.like(people)} />
+        <Card name={person.name} age={person.age} isPublished={this.state.isPublished} like={() => this.like(people)} skip={() => this.skip(people)} />
       </div>
     )
   }
