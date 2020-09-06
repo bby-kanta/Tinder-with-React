@@ -67,20 +67,29 @@ class Tinder extends React.Component {
     const people = this.state.people
     const person = people[0]
 
-    return (
-      <div className="cards">
-        <Card
-          image={person.image}
-          name={person.name}
-          age={person.age}
-          like={() => this.like(people)}
-          skip={() => this.skip(people)}
-          fadeIn={this.state.fadeIn}
-          rightSlide={this.state.rightSlide}
-          leftSlide={this.state.leftSlide}
-        />
-      </div>
-    )
+    if (people.length !== 0){
+      return (
+        <div className="cards">
+          <Card
+            image={person.image}
+            name={person.name}
+            age={person.age}
+            like={() => this.like(people)}
+            skip={() => this.skip(people)}
+            fadeIn={this.state.fadeIn}
+            rightSlide={this.state.rightSlide}
+            leftSlide={this.state.leftSlide}
+          />
+        </div>
+      )
+    } else{
+      return (
+        <div className="empty-cards">
+          <h2>カードはもうありません</h2>
+        </div>
+      )
+    }
+    
   }
 }
 
