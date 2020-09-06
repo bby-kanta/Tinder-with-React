@@ -6,10 +6,10 @@ class Tinder extends React.Component {
     super(props);
     this.state = {
       people: [
-        {id: 1, name:'ハーマイオニー', age: 19, image:'hamaioni.jpeg'},
-        {id: 2, name:'レイア', age: 30, image:'leia.jpg'},
-        {id: 3, name:'パドメ', age: 22, image:'padome.jpg'},
-        {id: 4, name:'マクゴナガル', age: 60, image:'makugonagaru.jpg'}
+        {id: 1, name:'ハーマイオニー', age: 19, image:'hamaioni.jpeg', profession:'魔女'},
+        {id: 2, name:'レイア', age: 30, image:'leia.jpg', profession:'将軍'},
+        {id: 3, name:'パドメ', age: 22, image:'padome.jpg', profession:'元老院議員'},
+        {id: 4, name:'マクゴナガル', age: 60, image:'makugonagaru.jpg', profession:'変身術教授'}
       ],
       fadeIn: false,
       rightSlide: false,
@@ -74,6 +74,7 @@ class Tinder extends React.Component {
             image={person.image}
             name={person.name}
             age={person.age}
+            profession={person.profession}
             like={() => this.like(people)}
             skip={() => this.skip(people)}
             fadeIn={this.state.fadeIn}

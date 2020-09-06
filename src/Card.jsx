@@ -9,7 +9,7 @@ const Card = (props) => {
       <div className="card-content">
         <div className="card-introduce">
           <h2>{props.name}</h2>
-          <h3>{props.age}歳</h3>
+          <h3>{props.age}歳 / {props.profession}</h3>
         </div>
         <div className="skip-like">
           <div onClick={() => props.skip()} className="skip"> スキップ </div>
