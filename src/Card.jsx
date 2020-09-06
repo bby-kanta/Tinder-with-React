@@ -9,9 +9,9 @@ const Card = (props) => {
           <h2>{props.name}</h2>
           <h3>{props.age}歳</h3>
         </div>
-        <div className="">
-          <div onClick={() => props.skip()}> スキップ </div>
-          <div onClick={() => props.like()}> いいね </div>
+        <div className="skip-like">
+          <div onClick={() => props.skip()} className="skip"> スキップ </div>
+          <div onClick={() => props.like()} className="like"> いいね </div>
         </div>
       </div>
     </div>

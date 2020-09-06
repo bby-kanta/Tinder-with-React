@@ -25,9 +25,42 @@ code {
   border: 1px solid black;
   box-shadow: 2px 2px 4px gray;
 }
-
 .card img {
   width: 100%;
+}
+
+.card-content {
+  padding: 0 10px 20px 10px;
+}
+
+.card-introduce {
+  display: flex;
+  flex-direction: column;
+}
+.card-introduce h2 {
+  margin: 0;
+} 
+.card-introduce h3 {
+  margin: 0;
+}
+
+.skip-like {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+.skip, .like {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.skip{
+  background-color: rgb(181, 250, 250);
+}
+.like{
+  background-color: pink;
 }
 
 .likeAnimation {

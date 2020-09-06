@@ -6,9 +6,9 @@ class Tinder extends React.Component {
     super(props);
     this.state = {
       people: [
-        {id: 1, name:'レイア', age: 30, image:'leia.jpg'},
-        {id: 2, name:'パドメ', age: 22, image:'padome.jpg'},
-        {id: 3, name:'ハーマイオニー', age: 19, image:'hamaioni.jpeg'},
+        {id: 1, name:'ハーマイオニー', age: 19, image:'hamaioni.jpeg'},
+        {id: 2, name:'レイア', age: 30, image:'leia.jpg'},
+        {id: 3, name:'パドメ', age: 22, image:'padome.jpg'},
         {id: 4, name:'マクゴナガル', age: 60, image:'makugonagaru.jpg'}
       ],
       fadeIn: false,
