@@ -5,7 +5,13 @@ class Tinder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPublished: false
+      isPublished: false,
+      people: [
+        {id: 1, name:'レイア', age: 30},
+        {id: 2, name:'パドメ', age: 22},
+        {id: 3, name:'ハーマイオニー', age: 19},
+        {id: 4, name:'マクゴナガル', age: 60}
+      ]
     }
   }
   
@@ -15,14 +21,24 @@ class Tinder extends React.Component {
     })
   };
 
+  like = (array) => {
+    this.setState({
+      people: this.state.people
+    })
+
+    const person = array.shift()
+    console.log(person.name + 'をいいねしました')
+    console.log(array)
+    return person
+  }
+
   render() {
+    const people = this.state.people
+    const person = people[0]
+
     return (
       <div>
-        <Card name="レイア" age="23" isPublished={this.state.isPublished} toggle={() => this.togglePublished()} />
-        <Card name="パドメ" age="25" />
-        <Card name="レイ" age="20" />
-        <Card name="ハーマイオニー" age="19" />
-        <Card name="マクゴナガル" age="60" />
+        <Card name={person.name} age="23" isPublished={this.state.isPublished} toggle={() => this.togglePublished()} like={() => this.like(people)} />
       </div>
     )
   }
