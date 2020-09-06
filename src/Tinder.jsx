@@ -42,13 +42,25 @@ class Tinder extends React.Component {
 
   skip = (array) => {
     this.setState({
+      fadeIn: false,
+      leftSlide: true,
       people: this.state.people
     })
 
-    const person = array.shift()
-    console.log(person.name + 'さんをスキップしました')
-    console.log('残り' + array.length + '人です')
-    return person
+    setTimeout(() => {
+      const person = array.shift()
+      console.log(person.name + 'さんをスキップしました')
+      console.log('残り' + array.length + '人です')
+    }, 200)
+
+    setTimeout(() => {
+      this.setState({
+        fadeIn: true,
+        leftSlide: false,
+        people: this.state.people
+      })
+    }, 300)
+
   }
 
   render() {
@@ -65,6 +77,7 @@ class Tinder extends React.Component {
           skip={() => this.skip(people)}
           fadeIn={this.state.fadeIn}
           rightSlide={this.state.rightSlide}
+          leftSlide={this.state.leftSlide}
         />
       </div>
     )

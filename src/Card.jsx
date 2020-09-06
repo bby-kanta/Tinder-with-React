@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = (props) => {
   return (
-    <div className={ props.fadeIn? "fadein card" : "" | props.rightSlide? "likeAnimation card" : "" + "card"}>
+    <div className={ props.fadeIn? "fadein card" : "" | props.rightSlide? "likeAnimation card" : "" | props.leftSlide? "skipAnimation card" : "" + "card"}>
       <img src={require(`./${props.image}`)} />
       <div className="card-content">
         <div className="card-introduce">
